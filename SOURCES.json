@@ -4,34 +4,39 @@
     "repository": "https://github.com/anthropics/skills",
     "ref": "main",
     "packaged_on": "2026-10-13",
-    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools."
+    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools.",
+    "local_adaptation": "Low-token edition: opt-in process skills, shortened conflicting workflows, and LOW_TOKEN_RULES.md. Not an unmodified upstream distribution."
   },
   {
     "name": "impeccable",
     "repository": "https://github.com/pbakaus/impeccable",
     "ref": "main",
     "packaged_on": "2026-10-13",
-    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools."
+    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools.",
+    "local_adaptation": "Low-token edition: opt-in process skills, shortened conflicting workflows, and LOW_TOKEN_RULES.md. Not an unmodified upstream distribution."
   },
   {
     "name": "superpowers",
     "repository": "https://github.com/obra/superpowers",
     "ref": "main",
     "packaged_on": "2026-10-13",
-    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools."
+    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools.",
+    "local_adaptation": "Low-token edition: opt-in process skills, shortened conflicting workflows, and LOW_TOKEN_RULES.md. Not an unmodified upstream distribution."
   },
   {
     "name": "pstack",
     "repository": "https://github.com/cursor/plugins",
     "ref": "main",
     "packaged_on": "2026-10-13",
-    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools."
+    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools.",
+    "local_adaptation": "Low-token edition: opt-in process skills, shortened conflicting workflows, and LOW_TOKEN_RULES.md. Not an unmodified upstream distribution."
   },
   {
     "name": "game-studio",
     "repository": "https://github.com/openai/plugins",
     "ref": "main",
     "packaged_on": "2026-10-13",
-    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools."
+    "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools.",
+    "local_adaptation": "Low-token edition: opt-in process skills, shortened conflicting workflows, and LOW_TOKEN_RULES.md. Not an unmodified upstream distribution."
   }
 ]

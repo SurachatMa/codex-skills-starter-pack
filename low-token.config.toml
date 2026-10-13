@@ -1,0 +1,14 @@
+# Merge into ~/.codex/config.toml; do not replace credentials, tools, or projects.
+model = "gpt-6.1-sol"
+model_reasoning_effort = "low"
+plan_mode_reasoning_effort = "low"
+
+[profiles.lean]
+model = "gpt-6.1-sol"
+model_reasoning_effort = "low"
+plan_mode_reasoning_effort = "low"
+
+[profiles.hard]
+model = "gpt-6-astra"
+model_reasoning_effort = "low"
+plan_mode_reasoning_effort = "low"

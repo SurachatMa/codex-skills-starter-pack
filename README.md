@@ -2,6 +2,8 @@
 
 รวม **frontend-design, Impeccable, Superpowers, pstack และ Game Studio** สำหรับให้เพื่อนติดตั้ง ใช้ได้ทั้งงานเว็บ เกม 2D/3D และเตรียมโมเดลจาก Blender
 
+ชุดนี้ปรับเป็น **Low-token edition**: งานทั่วไปใช้ GPT‑6.1 Sol แบบ Low/Light งานยากใช้ GPT‑6 Astra แบบ Low/Light และ workflow หนักต้องเรียกอย่างชัดเจน กฎฉบับเต็มอยู่ใน [LOW_TOKEN_RULES.md](./LOW_TOKEN_RULES.md) พร้อม [ค่าตั้งต้น](./low-token.config.toml)
+
 นี่เป็นชุดรวบรวมจากเจ้าของต้นฉบับ ไม่ใช่ผลงานที่เขียนขึ้นใหม่ และไม่ใช่ชุดปลั๊กอินที่ติดตั้ง integrations ทุกตัวให้อัตโนมัติ
 
 ## ติดตั้งง่ายที่สุด
@@ -19,13 +21,32 @@ Impeccable, Superpowers, pstack และ Game Studio สำหรับผู�
 หรือ junction/วิธีที่รองรับบน Windows
 ต้องเก็บ references, scripts, assets, agents และไฟล์ประกอบที่ถูกอ้างถึงครบ
 ตรวจ relative paths จากตำแหน่งติดตั้งจริง
+อ่าน LOW_TOKEN_RULES.md และเพิ่มเป็น user preferences ใน ~/.codex/AGENTS.md
+โดยรักษากฎอื่นที่มีอยู่ ถ้าขัดกันให้แสดงจุดขัดแย้งก่อนแก้
+รวมค่าจาก low-token.config.toml เข้า ~/.codex/config.toml
+โดยสำรองไฟล์ก่อนและรักษา credentials, tools, projects และ settings อื่น
+เก็บ agents/openai.yaml ที่กำหนด allow_implicit_invocation: false ไว้
 อย่าเขียนทับ skills เดิม ถ้าชื่อชนให้แจ้งและแยกชื่อชุดใหม่
 ถ้าเปลี่ยนชื่อ ให้ปรับ name และการอ้างอิงระหว่าง skills ให้ตรงกันด้วย
-อย่าเปิด hooks, automation, integrations หรือเปลี่ยน model settings อัตโนมัติ
+อย่าเปิด hooks, automation หรือ integrations อัตโนมัติ
+ปรับ model settings เฉพาะ low-token preset ที่ระบุด้านบน
 ตรวจว่าไฟล์ติดตั้งครบ แล้วบอกชื่อ skill ที่เรียกใช้งานได้
 ```
 
 ส่งข้อความใหม่หลังติดตั้ง ถ้า skills ยังไม่ปรากฏ ให้เปิดแชตใหม่หรือรีสตาร์ต Codex
+
+## การใช้โมเดลและควบคุม tokens
+
+| งาน | โมเดล | Reasoning |
+|---|---|---|
+| งานทั่วไป เขียนโค้ด แก้ไฟล์ และรีวิวทั่วไป | `gpt-6.1-sol` | `low` / Light |
+| บั๊กซับซ้อน concurrency อัลกอริทึม หรือการตัดสินใจสถาปัตยกรรมที่ยาก | `gpt-6-astra` | `low` / Light |
+
+CLI ใช้ `codex --profile lean` หรือ `codex --profile hard` หลังรวม config แล้ว ในแอปเลือกโมเดลและ Light/Low จากตัวเลือกของแชต โปรไฟล์เป็นค่าเริ่มต้น ไม่ใช่ตัวสลับโมเดลอัตโนมัติ และไม่เปลี่ยนโมเดลของแชตที่เปิดอยู่เอง
+
+ใช้ agent เดียวเป็นหลัก เลือก pstack หรือ Superpowers เพียง workflow เดียว งานทั่วไปไม่บังคับ brainstorm, TDD หรือ reviewer panel ทุกครั้ง งานยากอาจมอบหมายส่วนที่จำเป็นให้ Astra low หนึ่งตัวเมื่ออนุญาตให้ใช้ subagent แล้ว ใช้บริบทสั้นเฉพาะงาน
+
+Skills ที่ซ้ำหรือใช้กระบวนการหนักตั้งเป็น explicit-only ผ่าน `agents/openai.yaml` จึงเรียกด้วยชื่อได้เมื่อจำเป็น ส่วน using-superpowers, brainstorming, test-driven-development, requesting-code-review และ setup-pstack ถูกปรับคำสั่งให้ตรงกับกฎชุดนี้ เก็บหลักฐานการตรวจงานและข้อกำหนดความปลอดภัยไว้ตามเดิม ไม่มีการรับประกันเปอร์เซ็นต์การประหยัด tokens
 
 ## มีอะไรบ้าง
 
@@ -90,3 +111,4 @@ $poteto-mode ตรวจว่าระบบ login ทำงานอย่า
 - ไม่รวมการตั้งค่าเครื่อง บัญชี ประวัติแชต credentials หรือ skills ส่วนตัวของผู้รวบรวม
 - ZIP เก็บไฟล์ license/notice จากต้นฉบับ ข้อกำหนดแต่ละชุดยังใช้ตามเจ้าของเดิม ไม่ได้เปลี่ยน license ให้เป็นแบบเดียวกัน
 - [SOURCES.json](./SOURCES.json) ระบุ repository และข้อมูล snapshot ที่ใช้ ชุดนี้เป็น snapshot; อัปเดตจากต้นฉบับเมื่อต้องการเวอร์ชันใหม่
+- Skills บางส่วนปรับจากต้นฉบับเพื่อใช้ low-token policy ดังที่อธิบายด้านบน หากอัปเดตจาก upstream ให้ทบทวน policy และ invocation metadata อีกครั้ง
