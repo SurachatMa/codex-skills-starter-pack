@@ -38,5 +38,12 @@
     "packaged_on": "2026-10-13",
     "note": "Upstream snapshot; game-studio uses the previously installed upstream payload, excluding local tools.",
     "local_adaptation": "Low-token edition: opt-in process skills, shortened conflicting workflows, and LOW_TOKEN_RULES.md. Not an unmodified upstream distribution."
+  },
+  {
+    "name": "game-storyboard",
+    "repository": "https://github.com/SurachatMa/codex-skills-starter-pack",
+    "path": "skills/game-storyboard",
+    "packaged_on": "2026-10-13",
+    "note": "Custom skill created for this starter pack; not an official OpenAI skill."
   }
 ]

@@ -1,10 +1,10 @@
 # ชุด Skills สำหรับ Codex: ทำเกม ออกแบบ UI และพัฒนาซอฟต์แวร์
 
-รวม **frontend-design, Impeccable, Superpowers, pstack และ Game Studio** สำหรับให้เพื่อนติดตั้ง ใช้ได้ทั้งงานเว็บ เกม 2D/3D และเตรียมโมเดลจาก Blender
+รวม **frontend-design, Impeccable, Superpowers, pstack Game Studio และ game-storyboard** สำหรับให้เพื่อนติดตั้ง ใช้ได้ทั้งงานเว็บ เกม 2D/3D และเตรียมโมเดลจาก Blender
 
 ชุดนี้ปรับเป็น **Low-token edition**: งานทั่วไปใช้ GPT‑6.1 Sol แบบ Low/Light งานยากใช้ GPT‑6 Astra แบบ Low/Light และ workflow หนักต้องเรียกอย่างชัดเจน กฎฉบับเต็มอยู่ใน [LOW_TOKEN_RULES.md](./LOW_TOKEN_RULES.md) พร้อม [ค่าตั้งต้น](./low-token.config.toml)
 
-นี่เป็นชุดรวบรวมจากเจ้าของต้นฉบับ ไม่ใช่ผลงานที่เขียนขึ้นใหม่ และไม่ใช่ชุดปลั๊กอินที่ติดตั้ง integrations ทุกตัวให้อัตโนมัติ
+ชุดนี้รวบรวม skills จากเจ้าของต้นฉบับ และเพิ่ม game-storyboard ที่สร้างสำหรับ starter pack นี้ และไม่ใช่ชุดปลั๊กอินที่ติดตั้ง integrations ทุกตัวให้อัตโนมัติ
 
 ## ติดตั้งง่ายที่สุด
 
@@ -14,7 +14,7 @@
 
 ```text
 ช่วยติดตั้ง skills ทุกชุดจาก ZIP ที่แตกไว้ ได้แก่ frontend-design,
-Impeccable, Superpowers, pstack และ Game Studio สำหรับผู้ใช้คนนี้
+Impeccable, Superpowers, pstack, Game Studio และ game-storyboard สำหรับผู้ใช้คนนี้
 ตรวจ SOURCES.json เพื่อดูแหล่งต้นฉบับ
 เก็บโครงสร้างของแต่ละชุดไว้ใน ~/.codex/skill-bundles แล้วทำให้ Codex
 ค้นพบแต่ละ skill ผ่าน ~/.codex/skills โดยใช้ symlink บน macOS/Linux
@@ -62,6 +62,8 @@ Skills ที่ซ้ำหรือใช้กระบวนการหน�
 
 Game Studio มี 9 skills: game-studio, web-game-foundations, phaser-2d-game, three-webgl-game, react-three-fiber-game, web-3d-asset-pipeline, sprite-pipeline, game-ui-frontend และ game-playtest
 
+game-storyboard เป็น custom skill สำหรับวางฉาก ตารางช็อต ภาพ storyboard และจังหวะส่งคืนการควบคุมให้ผู้เล่น ใช้ ImageGen หรือ Blender เมื่อจำเป็น ไม่ใช่ skill ทางการของ OpenAI และไม่ติดตั้ง Storyboarder/Twine อัตโนมัติ ดู [คำสั่ง skill](./skills/game-storyboard/SKILL.md)
+
 ## เตรียม Blender และเครื่องมือ 3D
 
 ตัว ZIP มี skills และไฟล์ประกอบ ไม่รวม Blender, Node.js หรือโมเดล AI
@@ -78,6 +80,12 @@ gltf-transform --version
 เก็บต้นฉบับเป็น `.blend` และส่งออก `.glb` หรือ glTF 2.0 สำหรับเกมเว็บ ตรวจ scale, pivot, materials, textures และ animations ก่อนนำเข้าเกม
 
 ## ตัวอย่างข้อความเริ่มงาน
+
+```text
+$game-storyboard วาง storyboard เปิดเกมผจญภัย 3D ความยาว 30 วินาที
+ทำตาราง 6 ช็อต ระบุมุมกล้อง แอ็กชัน เสียง และจังหวะเริ่มควบคุมตัวละคร
+เริ่มจากข้อความก่อน ยังไม่ต้องสร้างภาพ
+```
 
 ```text
 $game-studio ทำเกม 2D แนว platformer ด้วย Phaser
